@@ -1,4 +1,7 @@
 # Changelog
+## v0.3.6
+- 서킷 카드 안내 및 출처 간소화, 지도 링크 아이콘화, 설정 내 상세 출처 추가.
+- 기존 SVG 및 좌표 데이터 유지. 코너 및 섹터 매핑은 후속 버전으로 이관.
 ## v0.3.5
 - F1DB SVG 25 layouts / 26 GP aliases, 501 XY samples per entry, offline validation.
 - Season roster, custom driver, editable number and team; separate home identity card.
