@@ -4,3 +4,8 @@ BLOCKED: npm dependencies unavailable in local environment (registry DNS failure
 
 ## v0.3.6
 - TSX syntax checked; full build and mobile visual QA pending. Circuit assets unchanged.
+
+## v0.3.7
+- 기존 서킷 데이터 및 저장 스키마 유지.
+- 포인트 수동 보정은 기존 총점 덮어쓰기 의미 유지.
+- 게임 내 레이아웃 및 제원 미대조. 배포 후 모바일 및 기록 편집 회귀 테스트 필요.
