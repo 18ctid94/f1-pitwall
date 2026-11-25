@@ -1,0 +1,12 @@
+.pw-select{position:relative;display:block;min-width:0;width:100%;color:var(--muted)}
+.pw-select select{display:block;width:100%;appearance:none;-webkit-appearance:none;background-image:none!important;padding-right:40px!important;margin:6px 0 0;height:44px;min-height:44px}
+.pw-select>svg{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;pointer-events:none}
+.gp-nav .pw-select select{margin:0}
+.pw-check{position:relative;display:inline-grid;place-items:center;flex:0 0 24px;width:24px;height:24px}
+.task .pw-check input[type=checkbox]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;z-index:1;cursor:pointer}
+.pw-check>span{display:grid;place-items:center;width:24px;height:24px;border:1px solid #657581;border-radius:5px;background:#10171c;color:#10171c;pointer-events:none}
+.pw-check svg{width:18px;height:18px;display:none;flex:none}
+.pw-check input:checked+span{background:var(--accent);border-color:var(--accent)}
+.pw-check input:checked+span svg{display:block}
+.pw-check input:focus-visible+span{outline:2px solid var(--accent);outline-offset:3px}
+.task{min-height:44px}.third-party{margin-top:16px;padding-top:0}.third-party h2{margin-bottom:8px}.doc-link:has(+.third-party){border-bottom:0}.third-party a:visited{color:var(--accent)}
