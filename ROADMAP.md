@@ -1,9 +1,14 @@
-# Roadmap
-- v0.3.5: static circuit library, driver identity and team themes.
-- v0.3.6: circuit card UI cleanup.
-- v0.3.7: verify game layouts, start/finish, direction and sector mapping.
-- v0.4: interactive circuit guide, season statistics, OVR graphs and PWA review.
-- v1.0: stabilization.
-
-- v0.3.7: Dashboard & Navigation Redesign
-- 후속: 서킷 상세 데이터 및 공략, 설정 하위 페이지 개선.
+# PITWALL Roadmap
+- v0.3.7: dashboard and navigation redesign.
+- v0.3.8: UI refinement and category navigation.
+- v0.3.9: multi-season storage, migration and backup compatibility.
+- v0.4.0: career management stabilization.
+- v0.4.1: verified circuit corner, sector and direction data.
+- v0.4.2: interactive circuit guide.
+- v0.5.0: career statistics.
+- v0.6.0: PWA and offline support.
+- v0.7.0: optional external authentication and cloud sync, local-first, no native password registration.
+- v0.8.0: multiple identity providers (Steam, Google, Apple; EA subject to API permission verification).
+- v0.9.0: game telemetry feasibility and integration.
+- v1.0.0: app release, subject to licensing and privacy review.
+External authentication does not imply access to game saves. Keep JSON portability and minimal personal data. Unimplemented features remain off the UI.
