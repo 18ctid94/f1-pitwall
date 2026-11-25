@@ -1,57 +1,43 @@
-import json, math, pathlib, urllib.request, urllib.parse, time
+"""Offline F1DB SVG conversion; requires fonttools. Coordinates are diagram XY, not GPS."""
+import json, math, pathlib, xml.etree.ElementTree as ET
+from fontTools.svgLib.path import parse_path
+from fontTools.pens.basePen import BasePen
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-TARGETS=json.loads((ROOT/'scripts/circuit-targets.json').read_text())
-OUT=ROOT/'public/circuits.json'
-ENDPOINTS=['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter']
-def distance(a,b):
- return 111.195*math.hypot(b[0]-a[0],(b[1]-a[1])*math.cos(math.radians((a[0]+b[0])/2)))
-def candidate(elements,target):
- # Accept only isolated, closed raceway components, never guess a route at branches.
- ways={e['id']:e for e in elements if e.get('type')=='way' and len(e.get('nodes',[]))>=2 and len(e.get('geometry',[]))==len(e['nodes']) and not any(x in str(e.get('tags',{})).lower() for x in ('pit lane','pitlane','pit_lane','kart'))}
- ends={}
- for i,w in ways.items():
-  for n in (w['nodes'][0],w['nodes'][-1]): ends.setdefault(n,[]).append(i)
- seen=set(); candidates=[]
- for i,w in ways.items():
-  if i in seen: continue
-  comp={i}; todo=[i]
-  while todo:
-   a=ways[todo.pop()]
-   for n in (a['nodes'][0],a['nodes'][-1]):
-    for j in ends[n]:
-     if j not in comp: comp.add(j);todo.append(j)
-  seen.update(comp)
-  if any(len(ends[n])!=2 for j in comp for n in (ways[j]['nodes'][0],ways[j]['nodes'][-1])):continue
-  start=w['nodes'][0]; node=start; used=set(); pts=[]
-  while len(used)<len(comp):
-   options=[j for j in ends[node] if j not in used]
-   if not options:break
-   j=options[0]; a=ways[j]; forward=a['nodes'][0]==node; g=a['geometry'] if forward else a['geometry'][::-1]; node=a['nodes'][-1] if forward else a['nodes'][0]; used.add(j); pts.extend((x['lat'],x['lon']) for x in (g if not pts else g[1:]))
-  if node!=start or used!=comp or len(pts)<12:continue
-  km=sum(distance(a,b) for a,b in zip(pts,pts[1:])); expected=target.get('km')
-  if not expected or abs(km-expected)/expected>.15:continue
-  candidates.append((abs(km-expected),km,pts,sorted(comp)))
- if not candidates:return None
- _,km,pts,ids=min(candidates,key=lambda x:x[0]); lat=target['lat']; xy=[((b-target['lon'])*math.cos(math.radians(lat)), -(a-lat)) for a,b in pts]; xs,ys=zip(*xy); scale=min(280/max(max(xs)-min(xs),1e-9),160/max(max(ys)-min(ys),1e-9)); cx=(max(xs)+min(xs))/2;cy=(max(ys)+min(ys))/2
- path='M '+' L '.join(f'{160+(x-cx)*scale:.2f} {100+(y-cy)*scale:.2f}' for x,y in xy)+' Z'
- return {'path':path,'km':round(km,3),'ways':ids,'coordinates':pts,'source':'OpenStreetMap','license':'ODbL-1.0','status':'candidate'}
-def main():
- old=json.loads(OUT.read_text()) if OUT.exists() else {}; report={}; cache={}
- for key,t in TARGETS.items():
-  if key in old:report[key]='retained';continue
-  if 'km' not in t:report[key]='missing reference length';continue
-  loc=(t['lat'],t['lon']); result=None
-  if loc in cache:result=cache[loc]
-  else:
-   q=f'[out:json][timeout:45];way(around:3500,{loc[0]},{loc[1]})[highway=raceway];out geom;'
-   for endpoint in ENDPOINTS:
-    try:
-     req=urllib.request.Request(endpoint,data=urllib.parse.urlencode({'data':q}).encode(),headers={'User-Agent':'PITWALL-circuit-library/0.3.3 (github.com/18ctid94/f1-pitwall)'})
-     with urllib.request.urlopen(req,timeout=65) as r: data=json.load(r)
-     result=candidate(data['elements'],t);break
-    except Exception as e: print(key,endpoint,str(e),flush=True)
-   cache[loc]=result;time.sleep(3)
-  if result:old[key]=result
-  report[key]='candidate' if result else 'unavailable';print(key,report[key],flush=True)
- OUT.parent.mkdir(exist_ok=True);OUT.write_text(json.dumps(old,ensure_ascii=False,indent=2));(ROOT/'circuit-report.json').write_text(json.dumps(report,indent=2));print('Available:',len(old),'/',len(TARGETS))
-if __name__=='__main__':main()
+class Sampler(BasePen):
+    def __init__(self): super().__init__(None); self.points=[]; self.closed=False; self.start=None
+    def _moveTo(self,p):
+        if self.points: raise ValueError('multiple subpaths')
+        self.start=p; self.points.append(p)
+    def _lineTo(self,p): self.points.append(p)
+    def _curveToOne(self,b,c,d):
+        a=self.points[-1]
+        for i in range(1,25):
+            t=i/24; u=1-t; self.points.append(tuple(u**3*a[k]+3*u*u*t*b[k]+3*u*t*t*c[k]+t**3*d[k] for k in (0,1)))
+    def _qCurveToOne(self,b,c):
+        a=self.points[-1]
+        for i in range(1,25):
+            t=i/24; u=1-t; self.points.append(tuple(u*u*a[k]+2*u*t*b[k]+t*t*c[k] for k in (0,1)))
+    def _closePath(self): self.points.append(self.start); self.closed=True
+    def _endPath(self): pass
+mapping=json.loads((ROOT/'scripts/circuit-targets.json').read_text()); assets={}; report={}
+for name,ident in mapping.items():
+    root=ET.parse(ROOT/'public/circuits'/f'{ident}.svg').getroot(); paths=list(root.iter('{http://www.w3.org/2000/svg}path'))
+    assert len(paths)==1 and not root.get('transform') and not paths[0].get('transform')
+    d=paths[0].get('d'); pen=Sampler(); parse_path(d,pen); pts=pen.points
+    assert pen.closed and len(pts)>20 and all(math.isfinite(v) for p in pts for v in p)
+    assert math.dist(pts[0],pts[-1])<1e-6
+    xs,ys=zip(*pts); w=max(xs)-min(xs); h=max(ys)-min(ys); assert w>0 and h>0
+    scale= min(288/w,168/h); ox=(320-w*scale)/2-min(xs)*scale; oy=(200-h*scale)/2-min(ys)*scale
+    xy=[(x*scale+ox,y*scale+oy) for x,y in pts]; lengths=[0.]
+    for a,b in zip(xy,xy[1:]): lengths.append(lengths[-1]+math.dist(a,b))
+    assert lengths[-1]>0
+    import bisect
+    coords=[]
+    for i in range(501):
+        target=lengths[-1]*i/500; j=min(len(xy)-2,max(0,bisect.bisect_right(lengths,target)-1)); span=lengths[j+1]-lengths[j]; t=(target-lengths[j])/span if span else 0
+        coords.append([round(xy[j][k]+t*(xy[j+1][k]-xy[j][k]),3) for k in (0,1)])
+    coords[-1]=coords[0]; assert all(0<=x<=320 and 0<=y<=200 for x,y in coords)
+    assets[name]={'layoutId':ident,'path':d,'transform':f'translate({ox:.8f} {oy:.8f}) scale({scale:.8f})','coordinates':coords,'coordinateSpace':'diagram-xy-320x200','source':'F1DB / Jules Roy','sourceRevision':'9dbbb9f67dc5fa3d499061efb56d24aa4f1e261d'}
+    report[name]={'layout':ident,'closed':True,'samples':len(coords)}
+assert len(set(mapping.values()))==25 and len(assets)==26
+(ROOT/'public/circuits.json').write_text(json.dumps(assets,ensure_ascii=False,separators=(',',':'))+'\n');(ROOT/'circuit-report.json').write_text(json.dumps(report,indent=2)+'\n');print('Validated',len(assets),'GP keys / 25 layouts')

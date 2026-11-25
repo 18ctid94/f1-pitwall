@@ -1,157 +1,28 @@
 {
-  "Australia": {
-    "name": "Albert Park",
-    "lat": -37.8497,
-    "lon": 144.968,
-    "km": 5.278
-  },
-  "China": {
-    "name": "Shanghai International Circuit",
-    "lat": 31.3389,
-    "lon": 121.22,
-    "km": 5.451
-  },
-  "Japan": {
-    "name": "Suzuka",
-    "lat": 34.843,
-    "lon": 136.54,
-    "km": 5.807
-  },
-  "Bahrain": {
-    "name": "Bahrain International Circuit",
-    "lat": 26.0325,
-    "lon": 50.51,
-    "km": 5.412
-  },
-  "Saudi Arabia": {
-    "name": "Jeddah Corniche Circuit",
-    "lat": 21.6319,
-    "lon": 39.1044,
-    "km": 6.174
-  },
-  "Miami": {
-    "name": "Miami International Autodrome",
-    "lat": 25.958,
-    "lon": -80.239,
-    "km": 5.412
-  },
-  "Emilia Romagna": {
-    "name": "Imola",
-    "lat": 44.3439,
-    "lon": 11.7167,
-    "km": 4.909
-  },
-  "Monaco": {
-    "name": "Circuit de Monaco",
-    "lat": 43.7347,
-    "lon": 7.4206,
-    "km": 3.337
-  },
-  "Spain": {
-    "name": "Barcelona-Catalunya",
-    "lat": 41.57,
-    "lon": 2.261,
-    "km": 4.657
-  },
-  "Barcelona": {
-    "name": "Barcelona-Catalunya",
-    "lat": 41.57,
-    "lon": 2.261,
-    "km": 4.657
-  },
-  "Canada": {
-    "name": "Gilles Villeneuve",
-    "lat": 45.5,
-    "lon": -73.522,
-    "km": 4.361
-  },
-  "Austria": {
-    "name": "Red Bull Ring",
-    "lat": 47.2197,
-    "lon": 14.7647,
-    "km": 4.318
-  },
-  "Great Britain": {
-    "name": "Silverstone",
-    "lat": 52.0786,
-    "lon": -1.0169,
-    "km": 5.891
-  },
-  "Belgium": {
-    "name": "Spa-Francorchamps",
-    "lat": 50.4372,
-    "lon": 5.9714,
-    "km": 7.004
-  },
-  "Hungary": {
-    "name": "Hungaroring",
-    "lat": 47.5789,
-    "lon": 19.2486,
-    "km": 4.381
-  },
-  "Netherlands": {
-    "name": "Zandvoort",
-    "lat": 52.3888,
-    "lon": 4.5409,
-    "km": 4.259
-  },
-  "Italy": {
-    "name": "Monza",
-    "lat": 45.6156,
-    "lon": 9.2811,
-    "km": 5.793
-  },
-  "Madrid": {
-    "name": "Madring",
-    "lat": 40.466,
-    "lon": -3.616
-  },
-  "Azerbaijan": {
-    "name": "Baku City Circuit",
-    "lat": 40.3725,
-    "lon": 49.8533,
-    "km": 6.003
-  },
-  "Singapore": {
-    "name": "Marina Bay",
-    "lat": 1.2914,
-    "lon": 103.864,
-    "km": 4.94
-  },
-  "United States": {
-    "name": "Circuit of the Americas",
-    "lat": 30.1328,
-    "lon": -97.6411,
-    "km": 5.513
-  },
-  "Mexico": {
-    "name": "Hermanos Rodr\u00edguez",
-    "lat": 19.4042,
-    "lon": -99.0907,
-    "km": 4.304
-  },
-  "Brazil": {
-    "name": "Interlagos",
-    "lat": -23.7036,
-    "lon": -46.6997,
-    "km": 4.309
-  },
-  "Las Vegas": {
-    "name": "Las Vegas Strip Circuit",
-    "lat": 36.1147,
-    "lon": -115.173,
-    "km": 6.201
-  },
-  "Qatar": {
-    "name": "Lusail",
-    "lat": 25.49,
-    "lon": 51.4542,
-    "km": 5.419
-  },
-  "Abu Dhabi": {
-    "name": "Yas Marina",
-    "lat": 24.4672,
-    "lon": 54.6031,
-    "km": 5.281
-  }
+  "Australia": "melbourne-2",
+  "China": "shanghai-1",
+  "Japan": "suzuka-2",
+  "Bahrain": "bahrain-1",
+  "Saudi Arabia": "jeddah-1",
+  "Miami": "miami-1",
+  "Emilia Romagna": "imola-3",
+  "Monaco": "monaco-6",
+  "Spain": "catalunya-6",
+  "Canada": "montreal-6",
+  "Austria": "spielberg-3",
+  "Great Britain": "silverstone-8",
+  "Belgium": "spa-francorchamps-4",
+  "Hungary": "hungaroring-3",
+  "Netherlands": "zandvoort-5",
+  "Italy": "monza-7",
+  "Azerbaijan": "baku-1",
+  "Singapore": "marina-bay-4",
+  "United States": "austin-1",
+  "Mexico": "mexico-city-3",
+  "Brazil": "interlagos-2",
+  "Las Vegas": "las-vegas-1",
+  "Qatar": "lusail-1",
+  "Abu Dhabi": "yas-marina-2",
+  "Madrid": "madring-1",
+  "Barcelona": "catalunya-6"
 }

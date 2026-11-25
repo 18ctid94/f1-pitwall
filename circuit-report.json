@@ -1,0 +1,132 @@
+{
+  "Australia": {
+    "layout": "melbourne-2",
+    "closed": true,
+    "samples": 501
+  },
+  "China": {
+    "layout": "shanghai-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Japan": {
+    "layout": "suzuka-2",
+    "closed": true,
+    "samples": 501
+  },
+  "Bahrain": {
+    "layout": "bahrain-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Saudi Arabia": {
+    "layout": "jeddah-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Miami": {
+    "layout": "miami-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Emilia Romagna": {
+    "layout": "imola-3",
+    "closed": true,
+    "samples": 501
+  },
+  "Monaco": {
+    "layout": "monaco-6",
+    "closed": true,
+    "samples": 501
+  },
+  "Spain": {
+    "layout": "catalunya-6",
+    "closed": true,
+    "samples": 501
+  },
+  "Canada": {
+    "layout": "montreal-6",
+    "closed": true,
+    "samples": 501
+  },
+  "Austria": {
+    "layout": "spielberg-3",
+    "closed": true,
+    "samples": 501
+  },
+  "Great Britain": {
+    "layout": "silverstone-8",
+    "closed": true,
+    "samples": 501
+  },
+  "Belgium": {
+    "layout": "spa-francorchamps-4",
+    "closed": true,
+    "samples": 501
+  },
+  "Hungary": {
+    "layout": "hungaroring-3",
+    "closed": true,
+    "samples": 501
+  },
+  "Netherlands": {
+    "layout": "zandvoort-5",
+    "closed": true,
+    "samples": 501
+  },
+  "Italy": {
+    "layout": "monza-7",
+    "closed": true,
+    "samples": 501
+  },
+  "Azerbaijan": {
+    "layout": "baku-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Singapore": {
+    "layout": "marina-bay-4",
+    "closed": true,
+    "samples": 501
+  },
+  "United States": {
+    "layout": "austin-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Mexico": {
+    "layout": "mexico-city-3",
+    "closed": true,
+    "samples": 501
+  },
+  "Brazil": {
+    "layout": "interlagos-2",
+    "closed": true,
+    "samples": 501
+  },
+  "Las Vegas": {
+    "layout": "las-vegas-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Qatar": {
+    "layout": "lusail-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Abu Dhabi": {
+    "layout": "yas-marina-2",
+    "closed": true,
+    "samples": 501
+  },
+  "Madrid": {
+    "layout": "madring-1",
+    "closed": true,
+    "samples": 501
+  },
+  "Barcelona": {
+    "layout": "catalunya-6",
+    "closed": true,
+    "samples": 501
+  }
+}

@@ -1,7 +1,5 @@
 # Roadmap
-- v0.3.x: 검증된 내장 서킷 경로 확보, 2025/2026 게임 캘린더 대조, 시각 QA.
-- v0.4: 시즌 통계, OVR 그래프, PWA 검토.
-- v0.5: 서킷별 주행 팁.
-- v1.0: 안정화.
-
-- v0.3.3: collect candidate routes, manually verify game layouts, publish static assets.
+- v0.3.5: static circuit library, driver identity and team themes.
+- v0.3.6: verify game layouts, start/finish, direction and sector mapping.
+- v0.4: interactive circuit guide, season statistics, OVR graphs and PWA review.
+- v1.0: stabilization.

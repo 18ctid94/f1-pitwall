@@ -1,4 +1,13 @@
 # Changelog
+## v0.3.5
+- F1DB SVG 25 layouts / 26 GP aliases, 501 XY samples per entry, offline validation.
+- Season roster, custom driver, editable number and team; separate home identity card.
+- Twelve team palettes and two-tone badges; retain local storage key and round order.
+- Preserve v0.3.4 glossary and driving guides.
+## v0.3.4
+- TIPS 메뉴 및 F1 용어집 47개 추가. 검색, 카테고리 및 시즌 필터 제공.
+- 기존 주행 가이드 유지 및 관련 용어에서 이동 지원.
+- 서킷 공략 가이드 준비 화면 추가. 기존 좌표 수집 파일 미변경.
 ## v0.3.3
 - 정적 서킷 경로 렌더러 및 수동 수집 Workflow 추가.
 - 좌표 확보 전에는 기존 대체 표시 유지.
