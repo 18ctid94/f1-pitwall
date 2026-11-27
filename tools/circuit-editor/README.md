@@ -1,11 +1,6 @@
-# PITWALL Circuit Annotation Toolkit V4
+# V5 Batch Annotation Pipeline
+Open index.html locally and load public/circuits.json. The catalog lists 25 unique layouts in V3 candidate-first order; Spain represents Barcelona as well. Existing approximate Bahrain anchors are seeded for review, not approved. Import an existing V4 draft to restore work; import replaces the workspace after confirmation. Do not import the arbitrary three-corner QA sample into real work.
 
-Requires existing V3 toolkit and public/circuits.json. No production files or workflow changes.
+For offline batch generation install Python 3.10+ and numpy/scipy (`py -m pip install numpy scipy`). Supply an independently permitted local JSON outside the repository with schema `pitwall-batch-input-v1`, and `layouts` keyed by layout ID. Each entry contains `year`, `permission_confirmed: true`, `reference` (source and permission notes), and `corners` with `number`, optional `letter`, and `trackPosition: {x,y}`. One source year per layout is used; season equivalence is not established by this tool. Example empty input: `{"schema":"pitwall-batch-input-v1","layouts":{}}`.
 
-Open index.html locally and load public/circuits.json. Select GP, enter turn ID (including letter suffix), click track or label. Auto place labels is a heuristic, not a collision guarantee. Orange markers show transformed input when a local draft is imported. Review each corner against an independently permitted reference; enter notes and mark reviewed. Export remains BLOCKED. Save drafts outside the repository. Existing Bahrain production annotations remain untouched.
-
-Optional local fit: install Python dependencies with `python -m pip install numpy==2.2.6 scipy==1.15.3`. Only if you have permission to process the provider data, obtain a permitted JSON input containing corners with number, letter and trackPosition x/y. Run from repository root:
-
-`python scripts/prepare-circuit-draft.py --gp Australia --year 2025 --input C:/temp/permitted.json --output C:/temp/australia-draft.json --permission-confirmed`
-
-Import the output in the editor. Do not commit input or output. No automated provider downloads, no release conversion, no official sector verification. Madrid can be edited manually. Hungary letter IDs are retained; ordering requires independent review. Drafts are keyed by GP, so keep different years in separate files.
+From repository root: `py scripts/prepare-circuit-batch.py --input C:/private/input.json --output C:/private/draft.json --permission-confirmed` (optional `--base C:/private/previous.json` preserves existing nonempty drafts). Output must not exist. Import output into editor. No API calls, no CI, no production conversion. Do not commit private inputs or outputs. Missing sources remain missing; Madrid can be edited manually. Bahrain production source is unchanged. V3 diagnostic status is historical, not approval. Review each corner against independent references and verify game layout before release. Official sectors and pit lane remain unverified.

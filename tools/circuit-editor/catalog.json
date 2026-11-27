@@ -1,0 +1,250 @@
+[
+  {
+    "gp": "Australia",
+    "layout": "melbourne-2",
+    "expected": 14,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Japan",
+    "layout": "suzuka-2",
+    "expected": 18,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Miami",
+    "layout": "miami-1",
+    "expected": 19,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Emilia Romagna",
+    "layout": "imola-3",
+    "expected": 19,
+    "status": "CANDIDATE",
+    "years": [
+      2025
+    ]
+  },
+  {
+    "gp": "Monaco",
+    "layout": "monaco-6",
+    "expected": 19,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Spain",
+    "layout": "catalunya-6",
+    "expected": 14,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Canada",
+    "layout": "montreal-6",
+    "expected": 14,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Austria",
+    "layout": "spielberg-3",
+    "expected": 10,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Great Britain",
+    "layout": "silverstone-8",
+    "expected": 18,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Netherlands",
+    "layout": "zandvoort-5",
+    "expected": 14,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Italy",
+    "layout": "monza-7",
+    "expected": 11,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "United States",
+    "layout": "austin-1",
+    "expected": 20,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Mexico",
+    "layout": "mexico-city-3",
+    "expected": 17,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Brazil",
+    "layout": "interlagos-2",
+    "expected": 15,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Las Vegas",
+    "layout": "las-vegas-1",
+    "expected": 17,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Qatar",
+    "layout": "lusail-1",
+    "expected": 16,
+    "status": "CANDIDATE",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "China",
+    "layout": "shanghai-1",
+    "expected": 16,
+    "status": "REVIEW",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Bahrain",
+    "layout": "bahrain-1",
+    "expected": 15,
+    "status": "REVIEW",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Saudi Arabia",
+    "layout": "jeddah-1",
+    "expected": 27,
+    "status": "REVIEW",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Belgium",
+    "layout": "spa-francorchamps-4",
+    "expected": 19,
+    "status": "REVIEW",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Hungary",
+    "layout": "hungaroring-3",
+    "expected": 14,
+    "status": "REVIEW_COUNT",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Azerbaijan",
+    "layout": "baku-1",
+    "expected": 20,
+    "status": "REVIEW",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Singapore",
+    "layout": "marina-bay-4",
+    "expected": 19,
+    "status": "REVIEW",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Abu Dhabi",
+    "layout": "yas-marina-2",
+    "expected": 16,
+    "status": "REVIEW",
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  {
+    "gp": "Madrid",
+    "layout": "madring-1",
+    "expected": 22,
+    "status": "API_BLOCKED",
+    "years": [
+      2026
+    ]
+  }
+]
