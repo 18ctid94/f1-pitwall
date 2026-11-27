@@ -71,7 +71,4 @@ export const en:Record<string,string>={
   "서킷 검색": "Search circuits",
   "JSON 백업": "JSON backup",
   "JSON 복원": "JSON restore",
-  "변경 이력": "Changelog",
-  "개발 로드맵": "Roadmap",
-  "라이선스 및 데이터 출처": "Licenses and data sources"
 };
