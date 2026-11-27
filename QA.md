@@ -39,3 +39,9 @@
 ## 0.4.3.2
 - Verify refresh, back/forward, corner selection and layer persistence on device.
 - Official timing boundaries and pit lane remain unverified.
+
+## 0.4.3.3
+- Verify coverage for 26 GP aliases / 25 layouts.
+- Verify Bahrain annotations remain unchanged and unavailable layers remain disabled elsewhere.
+- Verify Korean/English labels and career persistence.
+- Full build and browser regression pending.

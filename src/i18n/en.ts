@@ -148,4 +148,10 @@ export const en:Record<string,string>={
   "제동 및 코너 진입": "Braking and corner entry",
   "조향 및 스로틀 조절": "Steering and throttle control",
   "탈출 가속 및 직선": "Exit acceleration and straights",
+"서킷 데이터 현황": "Circuit data coverage",
+"코너 좌표": "Corner coordinates",
+"스타트라인": "Start line",
+"근사 위치": "Approximate position",
+"공식 계측 섹터": "Official timing sectors",
+"메타데이터 출처": "Metadata source",
 };

@@ -64,3 +64,7 @@
 ## 0.4.3.2
 - Add hash navigation, corner focus and two-column layer controls.
 - Add schematic Bahrain practice sections, not official timing sectors.
+
+## 0.4.3.3 — Circuit coverage foundation
+- Add F1DB metadata for 25 unique layouts and display per-layout annotation coverage.
+- Preserve Bahrain schematic annotations; remaining coordinates are unavailable.

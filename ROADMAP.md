@@ -34,3 +34,7 @@
 
 ## 0.4.3.2
 - Navigation and circuit UI refinement; official sector data remains pending.
+
+## 0.4.3.3
+- Metadata coverage foundation implemented; corner, start, pit and official sector coordinates remain pending outside existing Bahrain schematic data.
+- 0.4.3.4: Continue verified annotation acquisition before driving guides.
