@@ -9,3 +9,14 @@
 - 0.8.0: Multiple external identity providers, subject to provider policies.
 - 0.9.0: Game telemetry feasibility and integration.
 - 1.0.0: Release subject to QA and licensing review.
+
+- v0.4.0: Design System & Responsive Architecture; shared components and responsive regression tests.
+- v0.4.1: Career Management Stabilization.
+- v0.4.2: Circuit Data Enhancement.
+- v0.4.3: Interactive Circuit Guide.
+
+## 0.4.x
+- 0.4.0: shared UI foundation and responsive QA.
+- 0.4.1: career persistence and localization regression tests.
+- 0.4.2: circuit data enhancement.
+- 0.4.3: interactive circuit guide.

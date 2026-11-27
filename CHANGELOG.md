@@ -13,3 +13,15 @@
 - Add circuit pipeline, driving references and glossary.
 ## 0.1–0.3
 - Establish local career tracking, backups and team identity.
+
+### v0.3.9 mobile refinement
+- Normalize native form controls and checkbox rendering.
+- Advance checklist stages automatically on completion.
+- Separate season management from profile editing.
+- Simplify third-party attribution and adjust safe-area layout.
+
+## 0.4.0 — Design System & Responsive Architecture (candidate)
+- Introduce shared React controls, cards, progress and app shell.
+- Replace checklist pseudo-element checkmark with an explicit SVG.
+- Normalize select chevrons and document scrolling.
+- Retain existing career storage keys and circuit assets.

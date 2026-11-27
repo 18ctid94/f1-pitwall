@@ -1,4 +1,7 @@
 export const en:Record<string,string>={
+  "변경 이력": "Changelog",
+  "개발 로드맵": "Roadmap",
+  "라이선스 및 데이터 출처": "Licenses and data sources",
   "홈": "Home",
   "체크리스트": "Checklist",
   "시즌 기록": "Season History",
