@@ -1,0 +1,22 @@
+name: Discover FIA Circuit Documents
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/collect-fia-documents.py --output local-references/fia/reference-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pitwall-fia-discovery-v6.4
+          path: local-references/fia/reference-report.json
+          if-no-files-found: error
+          retention-days: 7

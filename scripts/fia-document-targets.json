@@ -1,0 +1,242 @@
+[
+  {
+    "layout": "melbourne-2",
+    "season": 2025,
+    "event": "Australian Grand Prix"
+  },
+  {
+    "layout": "melbourne-2",
+    "season": 2026,
+    "event": "Australian Grand Prix"
+  },
+  {
+    "layout": "shanghai-1",
+    "season": 2025,
+    "event": "Chinese Grand Prix"
+  },
+  {
+    "layout": "shanghai-1",
+    "season": 2026,
+    "event": "Chinese Grand Prix"
+  },
+  {
+    "layout": "suzuka-2",
+    "season": 2025,
+    "event": "Japanese Grand Prix"
+  },
+  {
+    "layout": "suzuka-2",
+    "season": 2026,
+    "event": "Japanese Grand Prix"
+  },
+  {
+    "layout": "bahrain-1",
+    "season": 2025,
+    "event": "Bahrain Grand Prix"
+  },
+  {
+    "layout": "bahrain-1",
+    "season": 2026,
+    "event": "Bahrain Grand Prix"
+  },
+  {
+    "layout": "jeddah-1",
+    "season": 2025,
+    "event": "Saudi Arabian Grand Prix"
+  },
+  {
+    "layout": "jeddah-1",
+    "season": 2026,
+    "event": "Saudi Arabian Grand Prix"
+  },
+  {
+    "layout": "miami-1",
+    "season": 2025,
+    "event": "Miami Grand Prix"
+  },
+  {
+    "layout": "miami-1",
+    "season": 2026,
+    "event": "Miami Grand Prix"
+  },
+  {
+    "layout": "imola-3",
+    "season": 2025,
+    "event": "Emilia Romagna Grand Prix"
+  },
+  {
+    "layout": "monaco-6",
+    "season": 2025,
+    "event": "Monaco Grand Prix"
+  },
+  {
+    "layout": "monaco-6",
+    "season": 2026,
+    "event": "Monaco Grand Prix"
+  },
+  {
+    "layout": "catalunya-6",
+    "season": 2025,
+    "event": "Spanish Grand Prix"
+  },
+  {
+    "layout": "catalunya-6",
+    "season": 2026,
+    "event": "Barcelona-Catalunya Grand Prix"
+  },
+  {
+    "layout": "montreal-6",
+    "season": 2025,
+    "event": "Canadian Grand Prix"
+  },
+  {
+    "layout": "montreal-6",
+    "season": 2026,
+    "event": "Canadian Grand Prix"
+  },
+  {
+    "layout": "spielberg-3",
+    "season": 2025,
+    "event": "Austrian Grand Prix"
+  },
+  {
+    "layout": "spielberg-3",
+    "season": 2026,
+    "event": "Austrian Grand Prix"
+  },
+  {
+    "layout": "silverstone-8",
+    "season": 2025,
+    "event": "British Grand Prix"
+  },
+  {
+    "layout": "silverstone-8",
+    "season": 2026,
+    "event": "British Grand Prix"
+  },
+  {
+    "layout": "spa-francorchamps-4",
+    "season": 2025,
+    "event": "Belgian Grand Prix"
+  },
+  {
+    "layout": "spa-francorchamps-4",
+    "season": 2026,
+    "event": "Belgian Grand Prix"
+  },
+  {
+    "layout": "hungaroring-3",
+    "season": 2025,
+    "event": "Hungarian Grand Prix"
+  },
+  {
+    "layout": "hungaroring-3",
+    "season": 2026,
+    "event": "Hungarian Grand Prix"
+  },
+  {
+    "layout": "zandvoort-5",
+    "season": 2025,
+    "event": "Dutch Grand Prix"
+  },
+  {
+    "layout": "zandvoort-5",
+    "season": 2026,
+    "event": "Dutch Grand Prix"
+  },
+  {
+    "layout": "monza-7",
+    "season": 2025,
+    "event": "Italian Grand Prix"
+  },
+  {
+    "layout": "monza-7",
+    "season": 2026,
+    "event": "Italian Grand Prix"
+  },
+  {
+    "layout": "baku-1",
+    "season": 2025,
+    "event": "Azerbaijan Grand Prix"
+  },
+  {
+    "layout": "baku-1",
+    "season": 2026,
+    "event": "Azerbaijan Grand Prix"
+  },
+  {
+    "layout": "marina-bay-4",
+    "season": 2025,
+    "event": "Singapore Grand Prix"
+  },
+  {
+    "layout": "marina-bay-4",
+    "season": 2026,
+    "event": "Singapore Grand Prix"
+  },
+  {
+    "layout": "austin-1",
+    "season": 2025,
+    "event": "United States Grand Prix"
+  },
+  {
+    "layout": "austin-1",
+    "season": 2026,
+    "event": "United States Grand Prix"
+  },
+  {
+    "layout": "mexico-city-3",
+    "season": 2025,
+    "event": "Mexico City Grand Prix"
+  },
+  {
+    "layout": "mexico-city-3",
+    "season": 2026,
+    "event": "Mexico City Grand Prix"
+  },
+  {
+    "layout": "interlagos-2",
+    "season": 2025,
+    "event": "São Paulo Grand Prix"
+  },
+  {
+    "layout": "interlagos-2",
+    "season": 2026,
+    "event": "São Paulo Grand Prix"
+  },
+  {
+    "layout": "las-vegas-1",
+    "season": 2025,
+    "event": "Las Vegas Grand Prix"
+  },
+  {
+    "layout": "las-vegas-1",
+    "season": 2026,
+    "event": "Las Vegas Grand Prix"
+  },
+  {
+    "layout": "lusail-1",
+    "season": 2025,
+    "event": "Qatar Grand Prix"
+  },
+  {
+    "layout": "lusail-1",
+    "season": 2026,
+    "event": "Qatar Grand Prix"
+  },
+  {
+    "layout": "yas-marina-2",
+    "season": 2025,
+    "event": "Abu Dhabi Grand Prix"
+  },
+  {
+    "layout": "yas-marina-2",
+    "season": 2026,
+    "event": "Abu Dhabi Grand Prix"
+  },
+  {
+    "layout": "madring-1",
+    "season": 2026,
+    "event": "Spanish Grand Prix"
+  }
+]
