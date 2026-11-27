@@ -1,7 +1,7 @@
-# 0.4.0 candidate QA
-- TSX transpile syntax: passed for main and shared UI.
-- Full type check, Vite build and browser rendering: pending (complete repository and dependencies unavailable in this environment).
-- Baseline: supplied 0.3.9 mobile patch, not verified against remote HEAD.
-- Verify checkbox center, auto advance, profile cards, attribution, select spacing, mobile scrolling, season history and persistence before release.
-- Existing storage key and record identifiers retained; migration regression not executed.
-- Remaining: full localization, extraction of feature-specific accordions and other shared components, real-device testing.
+# 0.4.0 stabilization QA
+- Baseline: bb807761f9926fcaf6d2a1a5cc2113f5586065f4; user reported 18/18 candidate checks complete.
+- Changed TS/TSX syntax and duplicate English translation keys: checked.
+- Full type check and Vite build: blocked by unavailable npm registry and uncached dependencies.
+- Browser and data regression: pending for this patch.
+- Storage keys and circuit assets unchanged.
+- Native confirmation retained; custom dialogs, toast, complete localization, legacy CSS cleanup and CI action upgrades deferred.

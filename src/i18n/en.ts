@@ -71,7 +71,13 @@ export const en:Record<string,string>={
   "서킷 검색": "Search circuits",
   "JSON 백업": "JSON backup",
   "JSON 복원": "JSON restore",
-  "변경 이력": "Changelog",
-  "개발 로드맵": "Roadmap",
-  "라이선스 및 데이터 출처": "Licenses and data sources"
+  "커스텀 드라이버": "Custom driver",
+  "현재 진행 라운드": "Current round",
+  "포인트 수동 보정 (총점 직접 지정)": "Manual points override (total)",
+  "현재 기록을 백업 데이터로 교체할까요?": "Replace current records with the backup?",
+  "이전 라운드를 과거 기록으로 표시할까요? 기존 체크리스트와 결과는 유지됩니다.": "Mark earlier rounds as past? Existing checklists and results are retained.",
+  "기록은 현재 브라우저에만 저장됩니다. 게임과 자동 연동되지 않습니다.": "Records are stored in this browser only. No automatic game sync.",
+  "비공식 비상업적 팬 프로젝트. Formula 1, FIA, EA 및 각 팀과 제휴하지 않습니다.": "Unofficial non-commercial fan project. Not affiliated with Formula 1, FIA, EA or the teams.",
+  "완료": "complete",
+  "올바른 PITWALL 백업 파일이 아닙니다.": "Invalid PITWALL backup file.",
 };

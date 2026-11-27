@@ -25,3 +25,9 @@
 - Replace checklist pseudo-element checkmark with an explicit SVG.
 - Normalize select chevrons and document scrolling.
 - Retain existing career storage keys and circuit assets.
+
+## 0.4.0 stabilization patch
+- Share form fields, switches, guide accordions and settings list items.
+- Derive displayed version from package metadata.
+- Add duplicate translation guard and translate additional application labels.
+- Preserve storage keys and circuit assets.

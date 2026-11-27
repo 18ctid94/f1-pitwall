@@ -1,22 +1,7 @@
 # Roadmap
-- 0.3.9: Multi-season career and initial internationalization.
-- 0.4.0: Career stability, migration and complete translation coverage.
-- 0.4.1: Verified circuit corner, sector and direction data.
-- 0.4.2: Interactive circuit guides.
-- 0.5.0: Career statistics.
-- 0.6.0: PWA and offline support.
-- 0.7.0: External authentication and optional cloud synchronization.
-- 0.8.0: Multiple external identity providers, subject to provider policies.
-- 0.9.0: Game telemetry feasibility and integration.
-- 1.0.0: Release subject to QA and licensing review.
-
-- v0.4.0: Design System & Responsive Architecture; shared components and responsive regression tests.
-- v0.4.1: Career Management Stabilization.
-- v0.4.2: Circuit Data Enhancement.
-- v0.4.3: Interactive Circuit Guide.
-
-## 0.4.x
-- 0.4.0: shared UI foundation and responsive QA.
-- 0.4.1: career persistence and localization regression tests.
-- 0.4.2: circuit data enhancement.
-- 0.4.3: interactive circuit guide.
+- 0.4.0: UI architecture stabilization; full build and regression verification pending.
+- 0.4.1: Career management, persistence and localization regression tests.
+- 0.4.2: Circuit data enhancement.
+- 0.4.3: Interactive circuit guide.
+- 0.5.0: Platform expansion and career statistics.
+- Later: PWA, external identity, optional synchronization and telemetry feasibility.
