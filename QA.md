@@ -28,3 +28,9 @@
 ## 0.4.3
 - Verify shared map, turn navigation, disabled unavailable layers, localization and career preservation.
 - Annotation data and browser regression pending.
+
+
+## 0.4.3.1
+- Check Bahrain T1–T15, selection, layer persistence and narrow widths.
+- Reference: https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_event_notes_-_circuit_map_v4.pdf
+- Positions are manually aligned schematic approximations; in-game verification and pit lane pending.

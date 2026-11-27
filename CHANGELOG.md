@@ -53,3 +53,9 @@
 ## 0.4.3 — Circuit Map Engine
 - Share circuit rendering between home and guide; add optional annotation layers and turn navigation.
 - Preserve geometry and career storage. Verified annotation coordinates are not yet available.
+
+
+## 0.4.3.1
+- Add approximate Bahrain corner and start/control line annotations and direction.
+- Standardize two-line layer controls and persist visibility preferences.
+- Keep pit lane unavailable until reliable geometry is obtained.

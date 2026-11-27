@@ -26,3 +26,7 @@
 - 0.4.3.1: Verify and populate corner, start and pit coordinates, beginning with Bahrain.
 - 0.4.3.2: Corner guides and personal notes.
 - 0.4.3.3: Sector and edition-specific regulation layers.
+
+
+## 0.4.3.1 status
+- Bahrain schematic annotations introduced; remaining layouts and pit geometry pending.

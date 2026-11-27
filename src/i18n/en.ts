@@ -139,4 +139,8 @@ export const en:Record<string,string>={
 "코너별 공략 데이터 준비 중": "Corner guide data pending",
 "서킷 지도 미확보": "Circuit map unavailable",
 "서킷 지도 로딩 중": "Loading circuit map",
+"S/F · 주행 방향": "S/F · Direction",
+"활성화": "Enabled",
+"비활성화": "Disabled",
+"실제 서킷 기준 근사 위치 · 게임 미검증": "Approximate real-world positions · Not game-verified",
 };
