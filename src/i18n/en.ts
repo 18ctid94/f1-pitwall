@@ -109,4 +109,11 @@ export const en:Record<string,string>={
   "시즌 수": "Seasons",
   "소속 팀 수": "Teams",
   "시즌별 획득 포인트": "Points by season",
+  "닫기": "Close",
+  "시즌 삭제 완료 · 통계 갱신": "Season deleted \u00b7 Statistics updated",
+  "우승률": "Win rate",
+  "포디움률": "Podium rate",
+  "레이스 순위 추이": "Race position trend",
+  "GP별 획득 포인트": "Points by GP",
+  "시즌 누적 포인트": "Cumulative season points",
 };

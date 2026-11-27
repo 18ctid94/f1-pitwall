@@ -13,3 +13,9 @@
 - Verify deletion of middle season preserves remaining IDs and next number.
 - Verify statistics, backup restore and dialog cancellation in browser.
 - Full build and browser regression pending.
+
+## 0.4.1.2 — Career Analytics & Feedback Refinement
+- Add shared SVG charts for race position, GP points, cumulative points and season totals.
+- Expand deletion details and portal-based notifications.
+- Preserve existing storage keys and season numbering.
+- Verify build and browser regression tests before release.

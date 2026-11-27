@@ -39,3 +39,9 @@
 ## 0.4.1.1 — Career Integrity & UI Refinement
 - Preserve existing season keys and persist a monotonic season counter.
 - Add confirmation dialog, toast and visible performance summaries.
+
+## 0.4.1.2 — Career Analytics & Feedback Refinement
+- Add shared SVG charts for race position, GP points, cumulative points and season totals.
+- Expand deletion details and portal-based notifications.
+- Preserve existing storage keys and season numbering.
+- Verify build and browser regression tests before release.
