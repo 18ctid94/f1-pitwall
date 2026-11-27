@@ -68,8 +68,8 @@ export const annotations:Record<string,Annotation>={
         65.945
       ],
       "label": [
-        145,
-        65
+        142,
+        47
       ]
     },
     {
@@ -101,8 +101,8 @@ export const annotations:Record<string,Annotation>={
         124.915
       ],
       "label": [
-        132,
-        112
+        130,
+        145
       ]
     },
     {
@@ -134,8 +134,8 @@ export const annotations:Record<string,Annotation>={
         78.049
       ],
       "label": [
-        151,
-        75
+        148,
+        78
       ]
     },
     {

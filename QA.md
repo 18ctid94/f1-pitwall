@@ -34,3 +34,8 @@
 - Check Bahrain T1–T15, selection, layer persistence and narrow widths.
 - Reference: https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_event_notes_-_circuit_map_v4.pdf
 - Positions are manually aligned schematic approximations; in-game verification and pit lane pending.
+
+
+## 0.4.3.2
+- Verify refresh, back/forward, corner selection and layer persistence on device.
+- Official timing boundaries and pit lane remain unverified.

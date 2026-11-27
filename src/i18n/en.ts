@@ -143,4 +143,9 @@ export const en:Record<string,string>={
 "활성화": "Enabled",
 "비활성화": "Disabled",
 "실제 서킷 기준 근사 위치 · 게임 미검증": "Approximate real-world positions · Not game-verified",
+  "연습 구간": "Practice sections",
+  "연습용 구간 · 공식 계측 섹터 아님": "Practice sections · not official timing sectors",
+  "제동 및 코너 진입": "Braking and corner entry",
+  "조향 및 스로틀 조절": "Steering and throttle control",
+  "탈출 가속 및 직선": "Exit acceleration and straights",
 };

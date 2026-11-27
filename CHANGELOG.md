@@ -59,3 +59,8 @@
 - Add approximate Bahrain corner and start/control line annotations and direction.
 - Standardize two-line layer controls and persist visibility preferences.
 - Keep pit lane unavailable until reliable geometry is obtained.
+
+
+## 0.4.3.2
+- Add hash navigation, corner focus and two-column layer controls.
+- Add schematic Bahrain practice sections, not official timing sectors.

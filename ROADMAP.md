@@ -30,3 +30,7 @@
 
 ## 0.4.3.1 status
 - Bahrain schematic annotations introduced; remaining layouts and pit geometry pending.
+
+
+## 0.4.3.2
+- Navigation and circuit UI refinement; official sector data remains pending.
