@@ -154,4 +154,6 @@ export const en:Record<string,string>={
 "근사 위치": "Approximate position",
 "공식 계측 섹터": "Official timing sectors",
 "메타데이터 출처": "Metadata source",
+  "서킷 길이": "Circuit length",
+  "레이스 랩": "Race laps",
 };

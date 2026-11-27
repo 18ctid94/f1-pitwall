@@ -45,3 +45,7 @@
 - Verify Bahrain annotations remain unchanged and unavailable layers remain disabled elsewhere.
 - Verify Korean/English labels and career persistence.
 - Full build and browser regression pending.
+
+## 0.4.3.3.1
+- Verify list alignment, missing corner controls, Bahrain interaction, translations, and existing career records.
+- Full build and device QA pending.

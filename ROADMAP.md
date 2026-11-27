@@ -38,3 +38,7 @@
 ## 0.4.3.3
 - Metadata coverage foundation implemented; corner, start, pit and official sector coordinates remain pending outside existing Bahrain schematic data.
 - 0.4.3.4: Continue verified annotation acquisition before driving guides.
+
+## Circuit annotation expansion
+- UI consolidation implemented in 0.4.3.3.1.
+- Remaining 24 layouts require independently referenced corner coordinates; official sectors and pit lanes remain pending.

@@ -68,3 +68,8 @@
 ## 0.4.3.3 — Circuit coverage foundation
 - Add F1DB metadata for 25 unique layouts and display per-layout annotation coverage.
 - Preserve Bahrain schematic annotations; remaining coordinates are unavailable.
+
+## 0.4.3.3.1 — Circuit UI consolidation
+- Consolidate coverage into layer controls and hide unavailable corner selectors.
+- Standardize numeric labels across lists.
+- Retain Bahrain annotations; additional coordinates remain unavailable.
