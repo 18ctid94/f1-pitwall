@@ -5,3 +5,6 @@
 - 0.4.3: Interactive circuit guide.
 - 0.5.0: Platform expansion and career statistics.
 - Later: PWA, external identity, optional synchronization and telemetry feasibility.
+
+## 0.4.1
+- Career statistics and timeline implemented; historical profile editing and season reactivation remain follow-up work.

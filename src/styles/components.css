@@ -10,3 +10,5 @@
 .pw-check input:checked+span svg{display:block}
 .pw-check input:focus-visible+span{outline:2px solid var(--accent);outline-offset:3px}
 .task{min-height:44px}.third-party{margin-top:16px;padding-top:0}.third-party h2{margin-bottom:8px}.doc-link:has(+.third-party){border-bottom:0}.third-party a:visited{color:var(--accent)}
+
+.career-metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.career-metrics small{overflow-wrap:anywhere}.performance-row{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(35px,1fr) auto;align-items:center;gap:8px;padding:8px 0}.performance-track{height:6px;background:#34414a;border-radius:6px;overflow:hidden}.performance-track i{display:block;height:100%;background:var(--accent)}.performance-row strong{font-size:11px}.season-manage{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 0}.season-manage strong{flex:1 1 100%}

@@ -31,3 +31,7 @@
 - Derive displayed version from package metadata.
 - Add duplicate translation guard and translate additional application labels.
 - Preserve storage keys and circuit assets.
+
+## 0.4.1 — Career Management
+- Add season and career statistics, timeline, compact navigation and GP points visualization.
+- Preserve existing storage keys; allow correction of race team and confirmed deletion of archived seasons.

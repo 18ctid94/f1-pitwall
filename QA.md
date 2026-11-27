@@ -5,3 +5,6 @@
 - Browser and data regression: pending for this patch.
 - Storage keys and circuit assets unchanged.
 - Native confirmation retained; custom dialogs, toast, complete localization, legacy CSS cleanup and CI action upgrades deferred.
+
+## 0.4.1
+- Verify existing backup restore, season isolation, historical GP edits, deletion confirmation, language and mobile layout after deployment.
