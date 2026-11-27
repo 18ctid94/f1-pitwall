@@ -23,3 +23,8 @@
 ## 0.4.2
 - Verify both edition lists, home navigation, metadata, translations and existing records.
 - Real-world metadata from supplied F1DB snapshot; game layout and lap counts not independently verified. Setup guidance is generic, not measured.
+
+
+## 0.4.3
+- Verify shared map, turn navigation, disabled unavailable layers, localization and career preservation.
+- Annotation data and browser regression pending.

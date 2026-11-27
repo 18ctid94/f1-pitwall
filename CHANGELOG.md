@@ -48,3 +48,8 @@
 - Expand deletion details and portal-based notifications.
 - Preserve existing storage keys and season numbering.
 - Verify build and browser regression tests before release.
+
+
+## 0.4.3 — Circuit Map Engine
+- Share circuit rendering between home and guide; add optional annotation layers and turn navigation.
+- Preserve geometry and career storage. Verified annotation coordinates are not yet available.

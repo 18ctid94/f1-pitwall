@@ -20,3 +20,9 @@
 
 - 0.4.2: Circuit metadata and baseline guide implemented; game-specific validation pending.
 - 0.4.3: Corner-level guide and verified layout data.
+
+
+## 0.4.3 follow-ups
+- 0.4.3.1: Verify and populate corner, start and pit coordinates, beginning with Bahrain.
+- 0.4.3.2: Corner guides and personal notes.
+- 0.4.3.3: Sector and edition-specific regulation layers.
