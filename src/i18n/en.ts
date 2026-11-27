@@ -100,4 +100,13 @@ export const en:Record<string,string>={
   "레이스 수": "Races",
   "리타이어": "DNF",
   "기록 없음": "No records",
+  "취소": "Cancel",
+  "확인": "Confirm",
+  "시즌을 삭제할까요?": "Delete this season?",
+  "해당 시즌의 기록과 통계가 삭제됩니다. 먼저 JSON 백업을 권장합니다.": "Season records and statistics will be removed. A JSON backup is recommended first.",
+  "삭제 완료": "Deleted",
+  "복원 완료": "Restored",
+  "시즌 수": "Seasons",
+  "소속 팀 수": "Teams",
+  "시즌별 획득 포인트": "Points by season",
 };

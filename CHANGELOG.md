@@ -35,3 +35,7 @@
 ## 0.4.1 — Career Management
 - Add season and career statistics, timeline, compact navigation and GP points visualization.
 - Preserve existing storage keys; allow correction of race team and confirmed deletion of archived seasons.
+
+## 0.4.1.1 — Career Integrity & UI Refinement
+- Preserve existing season keys and persist a monotonic season counter.
+- Add confirmation dialog, toast and visible performance summaries.

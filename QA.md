@@ -8,3 +8,8 @@
 
 ## 0.4.1
 - Verify existing backup restore, season isolation, historical GP edits, deletion confirmation, language and mobile layout after deployment.
+
+## 0.4.1.1
+- Verify deletion of middle season preserves remaining IDs and next number.
+- Verify statistics, backup restore and dialog cancellation in browser.
+- Full build and browser regression pending.

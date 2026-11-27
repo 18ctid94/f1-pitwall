@@ -8,3 +8,6 @@
 
 ## 0.4.1
 - Career statistics and timeline implemented; historical profile editing and season reactivation remain follow-up work.
+
+
+- 0.4.1.1: Career integrity and UI refinement before circuit enhancement.
