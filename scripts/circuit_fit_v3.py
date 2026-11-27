@@ -27,7 +27,7 @@ def similarity(q,y,sign):
     scale=np.sum(s*np.diag(d))/np.sum(a*a)
     return a@r*scale+y.mean(0)
 
-def fit(q,p):
+def fit(q,p, details=False):
     tree=cKDTree(p); center=p.mean(0); q=q-q.mean(0); q=q/max(np.linalg.norm(q,axis=1).max(),1e-9); scale=np.linalg.norm(p-center,axis=1).max(); seeds=[]
     for sign in (1,-1):
         def transform(v):
@@ -41,10 +41,13 @@ def fit(q,p):
             score,y=match(x,p)
             if y is None: break
             dist=np.linalg.norm(x-y,axis=1); item=(float(np.sqrt(np.mean(dist**2))),float(max(dist)))
-            if best is None or item<best: best=item
+            if best is None or item<best: best=item; best_x=x.copy(); best_y=y.copy()
             nxt=similarity(q,y,sign)
             if np.max(np.abs(nxt-x))<1e-5: break
             x=nxt
     if best is None: raise ValueError('no ordered correspondence')
     rmse,maximum=best
-    return {'rmse_svg_units':round(rmse,3),'max_svg_units':round(maximum,3),'cyclic_order':True,'ordered_rmse_svg_units':round(rmse,3),'nearest_seed_rmse_svg_units':round(float(np.sqrt(ranked[0][0])),3),'status':'CANDIDATE' if rmse<=3 and maximum<=8 else 'REVIEW'}
+    result={'rmse_svg_units':round(rmse,3),'max_svg_units':round(maximum,3),'cyclic_order':True,'ordered_rmse_svg_units':round(rmse,3),'nearest_seed_rmse_svg_units':round(float(np.sqrt(ranked[0][0])),3),'status':'CANDIDATE' if rmse<=3 and maximum<=8 else 'REVIEW'}
+
+    if details: result.update(transformed=best_x.tolist(), anchors=best_y.tolist())
+    return result
