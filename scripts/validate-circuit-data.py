@@ -7,49 +7,13 @@ from scipy.optimize import minimize
 ROOT = Path(__file__).resolve().parents[1]
 
 def fetch(url):
-    with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'PITWALL-validation/2.0'}), timeout=25) as r:
+    with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'PITWALL-validation/3.0'}), timeout=25) as r:
         return json.load(r)
 
-def ordered_match(xy,p):
-    # Dynamic programming: strictly increasing indices within one lap.
-    # Try plausible first-corner anchors and both traversal directions.
-    best=None
-    for track in (p,p[::-1]):
-        cost=((xy[:,None,:]-track[None,:,:])**2).sum(2)
-        for start in np.argsort(cost[0])[:8]:
-            c=np.roll(cost,-int(start),axis=1)
-            dp=np.full(len(p),np.inf); dp[0]=c[0,0]
-            for row in c[1:]:
-                dp=row+np.r_[np.inf,np.minimum.accumulate(dp)[:-1]]
-            score=float(dp.min())
-            if best is None or score<best: best=score
-    return float(np.sqrt(best/len(xy)))
-
-def fit(q,p):
-    # Sparse corner-to-centerline fit; multi-start, both coordinate handednesses.
-    tree=cKDTree(p); center=p.mean(0); q=q-q.mean(0)
-    q=q/max(np.linalg.norm(q,axis=1).max(),1e-9)
-    scale=np.linalg.norm(p-center,axis=1).max()
-    def transform(v,sign):
-        a,s,x,y=v; c,d=np.cos(a),np.sin(a)
-        return (q*np.array([1,sign]))@np.array([[c,-d],[d,c]])*s+[x,y]
-    candidates=[]
-    for sign in (1,-1):
-        def loss(v):
-            dist,_=tree.query(transform(v,sign)); return np.mean(dist**2)
-        for a in np.linspace(0,2*np.pi,16,endpoint=False):
-            r=minimize(loss,[a,scale,*center],method='Powell',bounds=[(-7,13),(scale*.5,scale*2),(center[0]-scale,center[0]+scale),(center[1]-scale,center[1]+scale)],options={'maxiter':120})
-            xy=transform(r.x,sign); dist,idx=tree.query(xy)
-            n=len(p); steps=np.diff(np.r_[idx,idx[0]])%n; reverse=(-np.diff(np.r_[idx,idx[0]]))%n
-            ordered=bool(np.all(steps>0) and (steps.sum()==n or reverse.sum()==n))
-            candidates.append((float(np.sqrt(np.mean(dist**2))),float(max(dist)),ordered,xy))
-    ranked=sorted(candidates,key=lambda c:c[0])[:8]
-    scored=[(ordered_match(c[3],p),c) for c in ranked]
-    constrained,(rmse,maximum,ordered,_)=min(scored,key=lambda c:c[0])
-    return {'rmse_svg_units':round(rmse,3),'max_svg_units':round(maximum,3),'cyclic_order':ordered,'ordered_rmse_svg_units':round(constrained,3),'status':'CANDIDATE' if ordered and rmse<=3 and maximum<=8 else 'REVIEW'}
+from circuit_fit_v3 import fit
 
 def main():
-    assets=json.loads((ROOT/'public/circuits.json').read_text()); targets=json.loads((ROOT/'scripts/circuit-validation-targets.json').read_text()); rows=[]
+    assets=json.loads((ROOT/'public/circuits.json').read_text()); targets=json.loads((ROOT/'scripts/circuit-validation-targets.json').read_text()); rows=[]; baseline=json.loads((ROOT/'scripts/circuit-validation-baseline-v2.json').read_text()); baseline={(r['gp'],r['year']):r for r in baseline['results']}
     for t in targets:
         row={k:t[k] for k in ('gp','year','layout','expected')}; rows.append(row)
         try:
@@ -66,15 +30,20 @@ def main():
             nums=[int(c['number']) for c in corners]; row['number_coverage']=len(set(nums)&set(range(1,t['expected']+1)))
             row['api']='PASS'; row['marshal_sectors']=len(data.get('marshalSectors',[])); row['official_sectors']='NOT_VALIDATED'; row['pit']='NOT_VALIDATED'
             if len(corners)!=t['expected'] or sorted(nums)!=list(range(1,t['expected']+1)):
-                row['status']='REVIEW_COUNT'; continue
+                row['status']='REVIEW_COUNT'; row['duplicate_number_count']=len(nums)-len(set(nums)); row['letter_count']=sum(bool(c.get('letter')) for c in corners); continue
             q=np.array([[c['trackPosition']['x'],c['trackPosition']['y']] for c in sorted(corners,key=lambda c:int(c['number']))],float)
             if not np.isfinite(q).all() or len(set(map(tuple,q)))!=len(q): raise ValueError('invalid corner coordinates')
             row.update(fit(q,p[:-1] if np.allclose(p[0],p[-1]) else p))
             row['label_collision']='NOT_VALIDATED'; row['release']='BLOCKED_LICENSE_AND_REFERENCE_REVIEW'
         except Exception as e:
             row['status']='API_BLOCKED' if isinstance(e,(urllib.error.URLError,TimeoutError)) else 'DIAGNOSTIC_ERROR'; row['error']=f'{type(e).__name__}: {str(e)[:180]}'
-        finally: print(json.dumps(row,ensure_ascii=False),flush=True)
-    report={'toolkit_version':2,'mode':'diagnostic_only','results':rows,'release':'BLOCKED'}
+        finally:
+            row['release']='BLOCKED_LICENSE_AND_REFERENCE_REVIEW'
+            old=baseline.get((t['gp'],t['year']),{})
+            if 'ordered_rmse_svg_units' in old and 'ordered_rmse_svg_units' in row:
+                row['v2_ordered_rmse']=old['ordered_rmse_svg_units']; row['delta_ordered_rmse']=round(row['ordered_rmse_svg_units']-old['ordered_rmse_svg_units'],3)
+            print(json.dumps(row,ensure_ascii=False),flush=True)
+    report={'toolkit_version':3,'mode':'diagnostic_only','results':rows,'release':'BLOCKED'}
     Path('circuit-validation-report.json').write_text(json.dumps(report,indent=2))
     summary=os.getenv('GITHUB_STEP_SUMMARY')
     if summary:
