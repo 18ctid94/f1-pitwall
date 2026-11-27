@@ -1,0 +1,127 @@
+[
+  {
+    "layout": "melbourne-2",
+    "gp": "Australia",
+    "expected": 14
+  },
+  {
+    "layout": "shanghai-1",
+    "gp": "China",
+    "expected": 16
+  },
+  {
+    "layout": "suzuka-2",
+    "gp": "Japan",
+    "expected": 18
+  },
+  {
+    "layout": "bahrain-1",
+    "gp": "Bahrain",
+    "expected": 15
+  },
+  {
+    "layout": "jeddah-1",
+    "gp": "Saudi Arabia",
+    "expected": 27
+  },
+  {
+    "layout": "miami-1",
+    "gp": "Miami",
+    "expected": 19
+  },
+  {
+    "layout": "imola-3",
+    "gp": "Emilia Romagna",
+    "expected": 19
+  },
+  {
+    "layout": "monaco-6",
+    "gp": "Monaco",
+    "expected": 19
+  },
+  {
+    "layout": "catalunya-6",
+    "gp": "Spain",
+    "expected": 14
+  },
+  {
+    "layout": "montreal-6",
+    "gp": "Canada",
+    "expected": 14
+  },
+  {
+    "layout": "spielberg-3",
+    "gp": "Austria",
+    "expected": 10
+  },
+  {
+    "layout": "silverstone-8",
+    "gp": "Great Britain",
+    "expected": 18
+  },
+  {
+    "layout": "spa-francorchamps-4",
+    "gp": "Belgium",
+    "expected": 19
+  },
+  {
+    "layout": "hungaroring-3",
+    "gp": "Hungary",
+    "expected": 14
+  },
+  {
+    "layout": "zandvoort-5",
+    "gp": "Netherlands",
+    "expected": 14
+  },
+  {
+    "layout": "monza-7",
+    "gp": "Italy",
+    "expected": 11
+  },
+  {
+    "layout": "baku-1",
+    "gp": "Azerbaijan",
+    "expected": 20
+  },
+  {
+    "layout": "marina-bay-4",
+    "gp": "Singapore",
+    "expected": 19
+  },
+  {
+    "layout": "austin-1",
+    "gp": "United States",
+    "expected": 20
+  },
+  {
+    "layout": "mexico-city-3",
+    "gp": "Mexico",
+    "expected": 17
+  },
+  {
+    "layout": "interlagos-2",
+    "gp": "Brazil",
+    "expected": 15
+  },
+  {
+    "layout": "las-vegas-1",
+    "gp": "Las Vegas",
+    "expected": 17
+  },
+  {
+    "layout": "lusail-1",
+    "gp": "Qatar",
+    "expected": 16
+  },
+  {
+    "layout": "yas-marina-2",
+    "gp": "Abu Dhabi",
+    "expected": 16
+  },
+  {
+    "layout": "madring-1",
+    "gp": "Madrid",
+    "expected": 22
+  }
+]
