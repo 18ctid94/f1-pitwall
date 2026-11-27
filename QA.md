@@ -19,3 +19,7 @@
 - Expand deletion details and portal-based notifications.
 - Preserve existing storage keys and season numbering.
 - Verify build and browser regression tests before release.
+
+## 0.4.2
+- Verify both edition lists, home navigation, metadata, translations and existing records.
+- Real-world metadata from supplied F1DB snapshot; game layout and lap counts not independently verified. Setup guidance is generic, not measured.

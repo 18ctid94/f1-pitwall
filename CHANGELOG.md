@@ -1,3 +1,6 @@
+## 0.4.2 — Circuit Data Enhancement
+- Extract circuit library; add F1DB metadata and home-to-guide navigation.
+
 # Changelog
 ## 0.3.9
 - Add season profiles and historical season selection while preserving existing record keys.

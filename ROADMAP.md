@@ -17,3 +17,6 @@
 - Expand deletion details and portal-based notifications.
 - Preserve existing storage keys and season numbering.
 - Verify build and browser regression tests before release.
+
+- 0.4.2: Circuit metadata and baseline guide implemented; game-specific validation pending.
+- 0.4.3: Corner-level guide and verified layout data.

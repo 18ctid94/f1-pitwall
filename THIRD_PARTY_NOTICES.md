@@ -7,3 +7,6 @@ Circuit SVG artwork: Jules Roy, contributed to F1DB. Source: https://github.com/
 OpenStreetMap links are location references only; no OSM geometry is bundled. Game-specific layouts, roster availability and specifications are not independently verified.
 
 Glossary and driving tips are original summaries.
+
+## Circuit metadata (0.4.2)
+Circuit type, direction, turns and place names adapted from the supplied F1DB source snapshot dated 2026-11-22, under CC BY 4.0. Source: https://github.com/f1db/f1db/tree/main/src/data/circuits . Metadata is real-world reference data, not verified against the game. Existing lap counts and geometry are unchanged.
