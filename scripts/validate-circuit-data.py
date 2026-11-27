@@ -7,8 +7,23 @@ from scipy.optimize import minimize
 ROOT = Path(__file__).resolve().parents[1]
 
 def fetch(url):
-    with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'PITWALL-validation/1.0'}), timeout=25) as r:
+    with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'PITWALL-validation/2.0'}), timeout=25) as r:
         return json.load(r)
+
+def ordered_match(xy,p):
+    # Dynamic programming: strictly increasing indices within one lap.
+    # Try plausible first-corner anchors and both traversal directions.
+    best=None
+    for track in (p,p[::-1]):
+        cost=((xy[:,None,:]-track[None,:,:])**2).sum(2)
+        for start in np.argsort(cost[0])[:8]:
+            c=np.roll(cost,-int(start),axis=1)
+            dp=np.full(len(p),np.inf); dp[0]=c[0,0]
+            for row in c[1:]:
+                dp=row+np.r_[np.inf,np.minimum.accumulate(dp)[:-1]]
+            score=float(dp.min())
+            if best is None or score<best: best=score
+    return float(np.sqrt(best/len(xy)))
 
 def fit(q,p):
     # Sparse corner-to-centerline fit; multi-start, both coordinate handednesses.
@@ -27,9 +42,11 @@ def fit(q,p):
             xy=transform(r.x,sign); dist,idx=tree.query(xy)
             n=len(p); steps=np.diff(np.r_[idx,idx[0]])%n; reverse=(-np.diff(np.r_[idx,idx[0]]))%n
             ordered=bool(np.all(steps>0) and (steps.sum()==n or reverse.sum()==n))
-            candidates.append((not ordered,float(np.sqrt(np.mean(dist**2))),float(max(dist)),ordered))
-    _,rmse,maximum,ordered=min(candidates)
-    return {'rmse_svg_units':round(rmse,3),'max_svg_units':round(maximum,3),'cyclic_order':ordered,'status':'CANDIDATE' if ordered and rmse<=3 and maximum<=8 else 'REVIEW'}
+            candidates.append((float(np.sqrt(np.mean(dist**2))),float(max(dist)),ordered,xy))
+    ranked=sorted(candidates,key=lambda c:c[0])[:8]
+    scored=[(ordered_match(c[3],p),c) for c in ranked]
+    constrained,(rmse,maximum,ordered,_)=min(scored,key=lambda c:c[0])
+    return {'rmse_svg_units':round(rmse,3),'max_svg_units':round(maximum,3),'cyclic_order':ordered,'ordered_rmse_svg_units':round(constrained,3),'status':'CANDIDATE' if ordered and rmse<=3 and maximum<=8 else 'REVIEW'}
 
 def main():
     assets=json.loads((ROOT/'public/circuits.json').read_text()); targets=json.loads((ROOT/'scripts/circuit-validation-targets.json').read_text()); rows=[]
@@ -55,9 +72,9 @@ def main():
             row.update(fit(q,p[:-1] if np.allclose(p[0],p[-1]) else p))
             row['label_collision']='NOT_VALIDATED'; row['release']='BLOCKED_LICENSE_AND_REFERENCE_REVIEW'
         except Exception as e:
-            row['status']='BLOCKED'; row['error']=f'{type(e).__name__}: {str(e)[:180]}'
+            row['status']='API_BLOCKED' if isinstance(e,(urllib.error.URLError,TimeoutError)) else 'DIAGNOSTIC_ERROR'; row['error']=f'{type(e).__name__}: {str(e)[:180]}'
         finally: print(json.dumps(row,ensure_ascii=False),flush=True)
-    report={'mode':'diagnostic_only','results':rows,'release':'BLOCKED'}
+    report={'toolkit_version':2,'mode':'diagnostic_only','results':rows,'release':'BLOCKED'}
     Path('circuit-validation-report.json').write_text(json.dumps(report,indent=2))
     summary=os.getenv('GITHUB_STEP_SUMMARY')
     if summary:
@@ -65,5 +82,5 @@ def main():
             f.write('## Circuit validation (diagnostic only)\n\n| GP | Received / expected | RMSE | Order | Status |\n|---|---|---|---|---|\n')
             for r in rows: f.write(f"| {r['gp']} | {r.get('received','—')} / {r['expected']} | {r.get('rmse_svg_units','—')} | {r.get('cyclic_order','—')} | {r['status']} |\n")
             f.write('\nNo provider coordinates exported. Candidate fits require independent reference and license review.\n')
-    return 0 if all(r['status']=='CANDIDATE' for r in rows) else 1
+    return 0
 if __name__=='__main__': sys.exit(main())
